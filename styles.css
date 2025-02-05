@@ -1,0 +1,127 @@
+/* Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+
+        /* Header Styles */
+        .header {
+            background: linear-gradient(135deg, #2c3e50, #3498db);
+            color: white;
+            text-align: center;
+            padding: 4rem 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Main Content */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        /* Bucket List Styles */
+        .bucket-list {
+            list-style: none;
+            padding: 2rem;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+        }
+
+        .list-item {
+            display: flex;
+            align-items: center;
+            padding: 1.2rem;
+            margin: 1rem 0;
+            border-left: 4px solid #3498db;
+            background: #f8f9fa;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .list-item:hover {
+            transform: translateX(10px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .list-item.completed {
+            border-color: #2ecc71;
+            opacity: 0.8;
+        }
+
+        .list-item.completed::after {
+            content: "\f058";
+            font-family: "Font Awesome 5 Free";
+            color: #2ecc71;
+            position: absolute;
+            right: 20px;
+            font-size: 1.5rem;
+        }
+
+        .icon {
+            margin-right: 1rem;
+            font-size: 1.2rem;
+            color: #3498db;
+        }
+
+        .list-item.completed .icon {
+            color: #2ecc71;
+        }
+
+        /* Footer Styles */
+        .footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .bucket-list {
+                padding: 1rem;
+            }
+
+            .list-item {
+                padding: 1rem;
+                margin: 0.8rem 0;
+            }
+
+            .list-item:hover {
+                transform: none;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header {
+                padding: 2.5rem 1rem;
+            }
+
+            .list-item {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .icon {
+                margin-bottom: 0.5rem;
+            }
+        }
